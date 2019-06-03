@@ -13,6 +13,13 @@ exports.createPages = ({ actions, graphql }) => {
 
   const blogPostTemplate = path.resolve(`./markdown-template.js`)
 
+
+  // Create a page for each Pokémon.
+  createPage({
+    path: `/portfolio`,
+    component: require.resolve("./src/portfolio/portfolio.js"),
+  })
+
   return graphql(`
     {
       allMarkdownRemark(
