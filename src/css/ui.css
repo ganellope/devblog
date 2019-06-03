@@ -1,0 +1,10 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+html,body{
+  font-family: 'Noto Sans KR','sans-serif';
+}
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
