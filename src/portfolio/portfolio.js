@@ -205,7 +205,63 @@ export default () => (
           </article>
         </section>
       </div>
+      <div class="resume-div">
+        <h1>유지보수 Project</h1>
+        <section>
+          <h4>티마크 호텔</h4>
+          <ul>
+            <li>
+              <b>한거</b>
+              <p>Wordpress로 제작된 4개의 홈페이지 기능 추가 및 플러그인,서버 관리</p>
+            </li>
+            <li>
+              <b>used technologies</b>
+              wordpress, php, apache
+            </li>
+          </ul>
+        </section>
 
+        <section>
+          <h4>한국공예디자인문화진흥원</h4>
+          <ul>
+            <li>
+              <b>한거</b>
+              <p>로그인 기능 및 리스트 뷰 수정</p>
+            </li>
+            <li>
+              <b>used technologies</b>
+              <p>oracle, java, spring, jsp</p>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h4>사회보장위원회</h4>
+          <ul>
+            <li>
+              <b>한거</b>
+              <p></p>
+            </li>
+            <li>
+              <b>used technologies</b>
+              <p>jeus,java, spring, oracle,javascript, JQuery</p>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>용인시여성회관</h4>
+          <ul>
+            <li>
+              <b>한거</b>
+              <p></p>
+            </li>
+            <li>
+              <b>used technologies</b>
+              <p>IIS, ASP, mssql, javascript, JQuery</p>
+            </li>
+          </ul>
+        </section>
+      </div>
       <div class="resume-div">
         <h1>problem solving</h1>
         <section>
@@ -240,9 +296,33 @@ export default () => (
 
       <div  class="resume-div">
         <h1>self-introduction</h1>
+        3년차 Back-end개발자 이가현입니다.
+        기록하는 걸 조아해 youtube ,blog뭐시기
+        새로운 것 배우는ㄱ ㅓ ㅈ앟=해
+        하하ㅏㅏㅎ하하ㅏ하하ㅏ하하하하ㅏ하ㅏ하
+        
         <section>
           <article>
-
+            <h3>외부활동</h3>
+            <ul>
+              <li>
+                <b>oec 앙트십 스쿨</b>
+                <p>
+                  기업가적 문제해결 능력 실제 학교에서 문제점을 찾아 개선할 수 있는 해결방안을 찾아 프로젝트를 진행하였음
+                </p>
+              </li>
+              <li>
+                <b>[WTD Seoul Meetup] 테크니컬 라이팅</b>
+                <p>개발 관련 기록에 대해 관심이 많아져 테크니컬 라이팅 서울 밋업에 참가해 P.O.W.E.R 글쓰기 이론과
+                테크니컬 라이터에 관해 알게됨</p>
+              </li>
+              <li>
+                <b>Web관련 컨퍼런스 참가</b>
+                <p>
+                  으악 리액트 관심많아졌ㅇ 그래서 리액터ㅡ를 이요해 포폴 블로그 만들었어~
+                </p>
+              </li>
+            </ul>
           </article>
         </section>
       </div>
