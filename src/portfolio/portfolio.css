@@ -1,8 +1,10 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 @import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 #profile-content{
   display: inline-block;
   height:300px;
+  margin-left:30px;
 }
 #profile-image{
   width:200px;
@@ -13,4 +15,35 @@
 }
 .used-tech{
   display:block;
+}
+.link-logo{
+  margin:3px 5px 3px 0px;
+}
+.highlight{
+  border-bottom: 3px solid #FFCBAE;
+}
+.circle{
+  width:10px;
+  height:10px;
+  border-radius:50px;
+  filter:alpha(opacity=30);
+  background:#FF5B14;
+  display: inline-block;
+  margin:0.54rem 0.54rem 0 0;
+}
+#link{
+  color: #3a3a3a;
+  text-decoration: none;
+  border-bottom: 3px solid #FF5B14;
+}
+#link:hover{
+  outline-width: 0;
+  text-shadow: none;
+  background-color: #FFCBAE;
+}
+
+#tech-ul>li{
+    display:inline; /* 세로나열을 가로나열로 변경 */
+    /*border-left:1px solid #FF5B14;  각 메뉴의 왼쪽에 "|" 표시(분류 표시) */
+    padding:0 10px;
 }
