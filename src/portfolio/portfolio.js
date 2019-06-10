@@ -17,7 +17,7 @@ export default () => (
             </li>
             <li>
               <img src="https://user-images.githubusercontent.com/45478754/59158031-c4f1e400-8aa3-11e9-8d77-d77004b8db31.png" width="27" height="20" class="link-logo"/>
-              <a href="https://www.youtube.com/channel/UCtHRehFBuziq3PrQaGdhe3w" id="link" target="_blank">https://www.youtube.com/channel/UCtHRehFBuziq3PrQaGdhe3w</a>
+              <a href="https://www.youtube.com/channel/UCtHRehFBuziq3PrQaGdhe3w" id="link" target="_blank">이건가현 저건가현</a>
             </li>
             <li>
               <img src="https://user-images.githubusercontent.com/45478754/59158030-c0c5c680-8aa3-11e9-8500-85af20d1537d.png" width="25" height="25" class="link-logo"/>
@@ -202,7 +202,7 @@ export default () => (
           <ul>
             <li>
               <p>Wordpress로 제작된 4개의 홈페이지 기능 추가 및 플러그인,서버 관리</p>
-              <p>보안 ~</p>
+              <p>보안 취약점 관련 수정</p>
             </li>
             <li>
               <p><b class="highlight">used technologies : </b>  wordpress, php, apache</p>
@@ -215,10 +215,11 @@ export default () => (
           <ul>
             <li>
               <p>사용자 로그인 서비스 기능 및 리스트 뷰 수정 </p>
+              <p>velocity 템플릿을 이용해 mvc패턴을 구현하였다.</p>
             </li>
             <li>
             <p>  <b class="highlight">used technologies : </b>
-              oracle, java, spring, jsp</p>
+              oracle, java, spring, jsp, velocity</p>
             </li>
           </ul>
         </section>
