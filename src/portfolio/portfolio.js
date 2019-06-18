@@ -29,9 +29,10 @@ export default () => (
 
 
       <div class="resume-div">
-        <p>기록하는 것을 좋아하는 3년차 Back-end개발자 이가현입니다.</p>
+        <p>3년차 Back-end개발자 이가현입니다.</p>
         <p>고등학교 부터 개발을 접하여 6년째 개발을 하고있습니다.</p>
         <p>유튜브, 블로그로 기록하는 것을 좋아합니다.</p>
+        <p>어제보다 더 나은 오늘의 나를 위해 열심히 달리는 중입니다!</p>
       </div>
 
       <div class="resume-div">
