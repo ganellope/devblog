@@ -9,10 +9,11 @@
 #profile-image{
   width:200px;
   float:left;
+  margin-top:30px;
 }
 .resume-div{
   display: block;
-  margin:40px 10px 40px 10px;
+  margin:50px 10px 50px 10px;
 }
 .used-tech{
   display:block;

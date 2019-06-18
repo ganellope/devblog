@@ -6,7 +6,7 @@ export default () => (
   <Layout>
     <div class="resume-div">
       <div id="profile">
-        <img src="https://user-images.githubusercontent.com/45478754/58774334-6e227100-85b0-11e9-9111-0f48d6e47631.jpg" id="profile-image"></img>
+        <img src="https://user-images.githubusercontent.com/45478754/59683209-3da12080-91c7-11e9-8bca-7f7729063fc5.jpg" id="profile-image"></img>
         <div id="profile-content">
           <ul>
             <li><h2>이가현</h2> <p>Gahyeon Lee</p></li>
@@ -25,6 +25,13 @@ export default () => (
             </li>
           </ul>
         </div>
+      </div>
+
+
+      <div class="resume-div">
+        <p>기록하는 것을 좋아하는 3년차 Back-end개발자 이가현입니다.</p>
+        <p>고등학교 부터 개발을 접하여 6년째 개발을 하고있습니다.</p>
+        <p>유튜브, 블로그로 기록하는 것을 좋아합니다.</p>
       </div>
 
       <div class="resume-div">
@@ -228,7 +235,7 @@ export default () => (
           <ul>
             <li>
               <p>정부 관련 프로젝트로 폐쇄적인 환경이여서 어려움이 있었으나 </p>
-              <p></p>
+              <p>커뮤니케이션을 통해 해결 및 개발</p>
             </li>
             <li>
               <p><b class="highlight">used technologies : </b>
@@ -283,45 +290,41 @@ export default () => (
 
 
       <div  class="resume-div">
-        <h1>self-introduction</h1>
-        기록하는 것을 좋아하는 3년차 Back-end개발자 이가현입니다.
-        고등학교 부터 개발을 접하여 6년째 개발을 하고있습니다.
-        유튜브, 블로그, 기록, 정확히 알지는 못해도 단어만은 알아두자 성장 고민
+        <h1>외부활동</h1>
         <section>
           <article>
-            <h3>외부활동</h3>
             <ul>
               <li>
-                <h4>oec 앙트십 스쿨</h4>
+                <h3>oec 앙트십 스쿨</h3>
                 <p>
                   기업가적 문제해결 능력 실제 학교에서 문제점을 찾아 개선할 수 있는 해결방안을 찾아 프로젝트를 진행
                 </p>
               </li>
               <li>
-                <h4>[WTD Seoul Meetup] 테크니컬 라이팅</h4>
+                <h3>[WTD Seoul Meetup] 테크니컬 라이팅</h3>
                 <p>개발 관련 기록에 대해 관심이 많아져 테크니컬 라이팅 서울 밋업에 참가해 </p>
                 <p>P.O.W.E.R 글쓰기 이론과 테크니컬 라이터에 관해 배웠음</p>
               </li>
               <li>
-                <h4>Web관련 컨퍼런스 참가</h4>
-                <p>Web 컨퍼런스에 참가해 내가 일하는 부분만이 아니라 다양한 관점에서 바라본 이야기를 들을 수 있어</p>
+                <h3>컨퍼런스 참가</h3>
+                <p>컨퍼런스에 참가해 내가 일하는 부분만이 아니라 다양한 관점에서 바라본 이야기를 들을 수 있어</p>
                 <p>협업 시 커뮤니케이션할 때 도움이 되었음</p>
-                <p>리액트 관련 발표를 듣고 관심이 생겨 리액트를 사용하는 gatsby를 이용해 블로그를 생성</p>
+                <p>실제로 리액트 관련 발표를 듣고 관심이 생겨 리액트를 사용하는 gatsby를 이용해 블로그를 생성</p>
                 <ul>
                   <li>
-                    <b>GDG DevFest Seoul 2018</b>
+                    <div class="circle"></div><b>GDG DevFest Seoul 2018</b>
                       <p>2018.11.10</p>
                       <p>프레임워크와 언어 및 개선 방안 소개</p>
                   </li>
 
                   <li>
-                    <b>Django Girls Seoul April Seminar</b>
+                    <div class="circle"></div><b>Django Girls Seoul April Seminar</b>
                     <p>2018.04.30</p>
                     <p>django/python을 이용한 프로젝트 구축 과정 및 장단점 소개</p>
                   </li>
 
                   <li>
-                    <b>Women TechMakers Seoul 2019</b>
+                    <div class="circle"></div><b>Women TechMakers Seoul 2019</b>
                     <p>2019.06.22</p>
                     <p>직무자존감을 높이고 커리어를 계획하는 방법</p>
                     <p>원하는 정보를 얻기위한 회사에서의 커뮤니케이션</p>
@@ -329,20 +332,16 @@ export default () => (
                   </li>
 
                   <li>
-                    <b>Korea Fintech Week</b>
+                    <div class="circle"></div><b>Korea Fintech Week</b>
                     <p>2019.05.24</p>
-                    <p></p>
+                    <p>핀테크와 5G 인슈어테크 관련 소개</p>
                   </li>
                   <li>
-                    <b>11th AppJam</b>
+                    <div class="circle"></div><b>11th AppJam</b>
                     <p>2016.07.23~2016.07.24</p>
                     <p>해커톤에 참가 24시간 동안 앱을 기획 및 개발 (개발자 역할) </p>
                   </li>
 
-                  <li>
-                      <b>JAVASCRIPT IS EVERYWHERE</b>
-                      <p>2019.06.22</p>
-                  </li>
                 </ul>
               </li>
             </ul>
