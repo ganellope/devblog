@@ -8,7 +8,8 @@ title: "메모리 DB(Redis, 멤캐쉬드 메모리)"
 ##🚀목표
 1. In-memory DB를 사용하는 이유를 알고 실제 적용되는 사례를 찾아보자  
 2. memcached와 redis를 비교하고 상황에 맞는 선택을 할 수 있다.   
-3. redis를 잘 사용하는 법을 알자
+3. redis를 잘 사용하는 법을 알자  
+4. redis 솔루션 개념을 알고 있다.
 
 ---
 ## In-memory DB를 사용하는 이유  🤷‍
@@ -107,6 +108,9 @@ __✔단점__
 - • 복구 시 wirte/update 연산을 다시 재실행하여 restart가 느리다.
 
 ---
+
+####
+
 ##💥redis를 잘 사용해야하는 이유
 1. 싱글쓰레드여서 모든 키를 보여주는 keys 명령어나 모든 데이터를 삭제하는 flushall 사용 시 다른 서비스를 요청하는 명령은 못 받아들인다.
 2. 32bit 환경에서는 최대 3GB 메모리만 사용 가능하지만 64bit 시스템에서는 제약이 없어 os의 가상메모리까지 쓰다가 한계를 인식하지 못해 문제를 일으킬 수 있다.  
@@ -114,18 +118,100 @@ __✔단점__
 3. Collection 사용 시 처리시간이 서비스에 지장을 줄 만큼 오래 걸리기 때문에 굳이 사용하려면 1만건 미만으로만 처리
 4. redis서버 장애 요인 99.9%가 RDB가 차지한다. 싱글쓰레가 아니라 fork() 방식을 사용해도 메모리를 2배로 잡아먹기에 RDB설정값을 잘 조정해서 사용해야 한다.
 
+---
+
+##
+
+##redis Replication (레디스 복제)
+
+서버 구성시 장애를 대비하기 위해서 사용  
+master/slave 방식을 통해 관리하고 master는 `read/write`   slave는 `read` 전용으로 사용하는 걸 권장하고 있다.
+
+- • 비동기 복제를 한다.
+- • 복제서버는 default가 읽기 전용이다. (replica-read-only : default yes)  
+- • /etc/redis/redis.conf파일을 수정하여 사용한다.
+
+- • __slave 설정__
+~~~
+slaveof [master ip] [master port]
+masterauth [master pw]
+~~~
+
+---
+
+
+##redis sentinel 🐱‍💻
+"서버에 대한 상태를 감시한다 "
+- • 상태를 체크할 떄 다수결에 의해 결정되므로 가급적 홀수로 구성한다.
+- • 운영중이 서버에 구성해도 되고 독립적으로 구성할 수 있다 ( port만 다르면 된다.)  
+- • sentinel.conf 파일로 환경설정
+
+###🐇하는 작업
+ • __모니터링__
+   > master와 slave가 정상적으로 작동하는지 지속적으로 확인한다  
+
+ • __알림__
+   > api를 통해 시스템 관리자에게 문제가 있을 경우 알려준다 ( email or sns)  
+
+ • __자동 페일오버__
+   > master가 정상적이지 않은 경우 자동적으로 slave가 master로 승격하여 자동으로 조치해주며   
+   다른 slave들은 새로 승격된 master로 미러링 할 수 있도록 해준다.
+
+#
+#  
+
+__`sdown(subjectively Down condition)`__
+> sentinel이 master와 접속이 끊겼다.   
+is-master-down-after-milliseconds로 설정한 시간 동안 ping요청에 대한 응답을 받지 못하면 판단   
+주관적 다운 상태이다.  
+
+__`odown(Objectively Down condition)`__  
+> 과반수 이상이 장애라고 생각 장애 조치를 취하는 단계이다.  
+객관적 다운 상태이다.  
+
+
+---
+
+#
+#
+
+##redis Cluster 🐱‍💻  
+##
+![ex_screenshot](https://user-images.githubusercontent.com/45478754/65875251-7a5be680-e376-11e9-8a4b-6d140495832d.png)    
+
+##  
+
+- • multi master multi slave 구조이다.
+- • 서버들을 하나로 묶어 시스템을 사용하게 한다 -> 트래픽을 서버들이 나눠서 처리할 수 있고, 장애가 일어나도 서로 보완
+- • TCP Port를 사용해서 통신하는데 기본적으로 redis TCP port와 노드간 통신을 위한 포트의 간격을 10000으로 한다.  
+- • data sharding(데이터 샤딩) :  DBMS밖에서 데이터를 나누는 방식 - > scale out가능
 
 
 
-병목현상,
 
+##
+##
+##
+_- 출처_   
+[http://redisgate.kr/redis/configuration/replication.php](http://redisgate.kr/redis/configuration/replication.php)
 
+[https://redis.io/topics/sentinel](https://redis.io/topics/sentinel)
 
+[https://redis.io/topics/sentinel#more-advanced-concepts](https://redis.io/topics/sentinel#more-advanced-concepts)
 
+[https://jdm.kr/blog/159](https://jdm.kr/blog/159)
 
+[https://daddyprogrammer.org/post/1601/redis-cluster/](https://daddyprogrammer.org/post/1601/redis-cluster/)
 
+[http://redisgate.jp/redis/cluster/cluster_introduction.php](http://redisgate.jp/redis/cluster/cluster_introduction.php)
 
-_출처_   
+[https://velog.io/@jnsorn/Redis-6.-Redis-Cluster-사용하기-Cluster-Proxy](https://velog.io/@jnsorn/Redis-6.-Redis-Cluster-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-Cluster-Proxy)
+
+[https://y0c.github.io/2018/10/21/redis-cluster/](https://y0c.github.io/2018/10/21/redis-cluster/)
+
+[https://code-factory.tistory.com/12](https://code-factory.tistory.com/12)
+
+[https://m.blog.naver.com/PostView.nhn?blogId=dandywoobin&logNo=10170958496&proxyReferer=https%3A%2F%2Fwww.google.com%2F](https://m.blog.naver.com/PostView.nhn?blogId=dandywoobin&logNo=10170958496&proxyReferer=https%3A%2F%2Fwww.google.com%2F)  
 https://aws.amazon.com/ko/elasticache/redis-vs-memcached/  
 https://www.infoworld.com/article/3063161/why-redis-beats-memcached-for-caching.html  
 https://medium.com/@Alibaba_Cloud/redis-vs-memcached-in-memory-data-storage-systems-3395279b0941  
