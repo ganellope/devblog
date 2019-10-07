@@ -13,11 +13,13 @@ title: "Lalavel framework LifeCycle"
 
 1. 모든 요청의 시작점은 __`public/index.php`__ 파일이다.(프레임워크를 실행하기 위한 로딩의 시작점)
 
-2. composer가 autoload.php파일을 생성하고 bootstrap에서 lalavel 응용 프로그램 객체를 가져온다.  
+2. composer가 autoload.php파일을 생성하고 bootstrap(php 환경을 로드하는 프로세스)에서 lalavel 응용 프로그램 객체를 가져온다.  
 >
- __`bootstrap/app.php`__ : 앱을 로드하고 초기화  
+ __`bootstrap/app.php`__ : 앱을 로드하고 초기화 
+
  __`bootstrap/services.php`__ : 서비스를 더 빨리 로드하기 위해 응용 프로그램에 저장    
- __`bootstrap/autoload.php`__>  :  패키지가 로드  
+ __`bootstrap/autoload.php`__:  패키지가 로드  
+class나 interface가 없는 경우 자동으로 호출
 
 > __composer__  
 php의 의존성 관리를 의한 도구  
@@ -26,13 +28,13 @@ php의 의존성 관리를 의한 도구
 
 
 3. http kernel에서는 애플리케이션 요청 전 통과해야하는 미들웨어처리, 응답 요청 처리, 세션 처리, 쿠키 암호화
-> HTTP 미들웨어 : http 요청을 간편하게 필터링, `app/Http/Middleware` 안에 들어있음
+> HTTP 미들웨어 : http 요청을 간편하게 필터링, `app/Http/Middleware` 안에 들어있음  
 ex) 사용자 인증
 
 4. Service Providers는 애플리케이션에 필요한 클래스로 제공하는 서비스가 실제로 필요한 경우에만 로드해준다.
  __`config/app.php`__ 파일의 __`providers `__ 베열에 설정되어있다.
 
-5.  `route.php` 파일이 로드되면 request 객체가 응용 프로그램으로 전송되어 경로를 전달한다.
+5.  `route.php` (라우팅 규칙이 정의됭 있다) 파일이 로드되면 request 객체가 응용 프로그램으로 전송되어 경로를 전달한다.
 -> 정확한 경로를 찾아 컨트롤러 기능을 호출
 
 6. 컨트롤러는 입력을 확인 후 모델을 호출하고 뷰를 호출한다.
